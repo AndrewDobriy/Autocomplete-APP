@@ -4,12 +4,12 @@ const matchList = document.querySelector('#match-list');
 // Search russian-cities.json and filter it
 const searchStates = async (searchText) => {
   const res = await fetch('russian-cities.json');
-  const states = await res.json();
+  const cities = await res.json();
 
   // Get matches to current text input
-  let matches = states.filter((state) => {
+  let matches = cities.filter((citi) => {
     const regex = new RegExp(`^${searchText}`, 'gi');
-    return state.name.match(regex);
+    return citi.name.match(regex);
   });
   if (searchText.length === 0) {
     matches = [];
