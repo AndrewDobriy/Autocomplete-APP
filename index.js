@@ -9,7 +9,7 @@ const searchStates = async (searchText) => {
   // Get matches to current text input
   let matches = states.filter((state) => {
     const regex = new RegExp(`^${searchText}`, 'gi');
-    return state.name.match(regex) || state.district.match(regex);
+    return state.name.match(regex);
   });
   if (searchText.length === 0) {
     matches = [];
